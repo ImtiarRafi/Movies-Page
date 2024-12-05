@@ -1,0 +1,118 @@
+*{ 
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(0, 0, 0);
+}
+
+body{
+    min-height: 100vh;
+    background: rgb(0, 0, 0);
+    color: rgb(219, 195, 195);
+    display: flex; /* Flexbox layout for centering */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    flex-direction: column; /* Ensure vertical alignment */
+}
+
+.container {
+    display: flex; /* Flexbox for horizontal alignment */
+    gap: 20px; /* Space between .box and .box2 */
+    justify-content: center; /* Center the boxes horizontally within container */
+    align-items: center; /* Center the boxes vertically within container */
+}
+
+h1{
+    color: rgb(204, 216, 224);
+}
+
+.box{
+    margin: 0; /* Remove unnecessary margins for precise alignment */
+    padding: 3%;
+    width: 300px;
+    text-align: center;
+    background-color: rgb(78, 29, 48);
+    border-radius: 3%;
+    position: relative;
+}
+
+@property --measurement{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.box::after, .box::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--measurement), #6b2222, #16704c, #0a2b5a, #88004f, #6b2222);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 4px;
+    border-radius: 3px;
+    animation: 3s movement linear infinite;
+}
+
+.box::before{
+    filter: blur(1rem);
+    opacity: .5;
+}
+
+.box2 img{
+    width: 200px;
+}
+
+.box2{
+    margin: 0; /* Remove unnecessary margins for precise alignment */
+    width: 200px;
+    border-radius: 6%;
+    position: relative;
+}
+
+.box2::after, .box2::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--measurement), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+    top: 49%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 4px;
+    border-radius: 5px;
+    animation: 3s movement linear infinite;
+}
+
+.box2::before{
+    filter: blur(1rem);
+    opacity: .5;
+}
+
+@keyframes movement{
+    from{
+        --measurement: 0deg;
+    }
+    to{
+        --measurement: 360deg;
+    }
+}
+.bookingbutton button{
+    background-color: rgb(5, 5, 194);
+    color: aliceblue;
+    font-size: larger;
+    font-family:'Courier New', Courier, monospace;
+    border-radius: 5%;
+    margin: auto;
+    padding: 10px;
+}
+button:hover{
+    background-color: #0a2b5a;
+}
