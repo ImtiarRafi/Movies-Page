@@ -7,7 +7,19 @@ html{
     font-family: 'Courier New', Courier, monospace;
     color: rgb(0, 0, 0);
 }
-
+header{
+    font-size: xx-large; 
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(94, 44, 60);
+    border-radius: 5px;
+    padding: 10px;
+}
+a{
+    text-decoration: none;
+}
+header:hover{
+    background-color: rgb(202, 92, 127); 
+}
 body{
     min-height: 100vh;
     background: rgb(0, 0, 0);
@@ -27,6 +39,7 @@ body{
 
 h1{
     color: rgb(204, 216, 224);
+    font-size: larger;
 }
 
 .box{
@@ -115,4 +128,13 @@ h1{
 }
 button:hover{
     background-color: #0a2b5a;
+}
+@media (max-width:600px){
+    .container{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .box,.box2{
+        max-width: 90%;
+    }
 }
