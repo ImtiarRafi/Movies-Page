@@ -138,3 +138,9 @@ button:hover{
         max-width: 90%;
     }
 }
+.footer-section{
+    text-align: center;
+}
+.footer-section a{
+color: rgb(148, 35, 78);
+}
